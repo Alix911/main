@@ -1,0 +1,7 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+  <link rel="stylesheet" href="/static/src/assets/css/styles.css">
+  <h4 class="fw-semibold mb-3">Hello This is the admin pannel</h4>
+  <p class="mb-0 fs-3">Here you can access and manage the database of your project with ease</p>
+  <a class="text-primary fw-bold ms-2" href="{{ url_for('app.dashboard') }}">View the Dashboard</a>
+{% endblock %}

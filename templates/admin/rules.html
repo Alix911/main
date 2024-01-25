@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card w-100">
+  <div class="card-body p-4">
+    <h5 class="card-title fw-semibold mb-4">Rules</h5>
+    <div class="table-responsive">
+      <table class="table text-nowrap mb-0 align-middle">
+        <thead class="text-dark fs-4">
+          <tr>
+            <th class="border-bottom-0">
+              <h6 class="fw-semibold mb-0">Id</h6>
+            </th>
+            <th class="border-bottom-0">
+              <h6 class="fw-semibold mb-0">Rule</h6>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for rule in context %}
+          <tr>
+            <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ rule['id'] }}</h6></td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-1">{{ rule['text'] }} </h6>                         
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p style="padding: 20px;color: red;">
+        Any violation of any of these rules results in blocking the user form accessing the website
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

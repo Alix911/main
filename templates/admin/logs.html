@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card w-100">
+  <div class="card-body p-4">
+    <h5 class="card-title fw-semibold mb-4">Total User Blocks</h5>
+    <div class="table-responsive">
+      <table class="table text-nowrap mb-0 align-middle">
+        <thead class="text-dark fs-4">
+          <tr>
+            <th class="border-bottom-0">
+              <h6 class="fw-semibold mb-0">User ID</h6>
+            </th>
+            <th class="border-bottom-0">
+              <h6 class="fw-semibold mb-0">Name</h6>
+            </th>
+            <th class="border-bottom-0">
+              <h6 class="fw-semibold mb-0">Priority</h6>
+            </th>
+            <th class="border-bottom-0">
+              <h6 class="fw-semibold mb-0">Blocks</h6>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for log in context %}
+          <tr>
+            <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ log.id }}</h6></td>
+            <td class="border-bottom-0">
+              <h6 class="fw-semibold mb-1">{{ log.user }}</h6>
+                                          
+            </td>
+            
+            <td class="border-bottom-0">
+              <div class="d-flex align-items-center gap-2">
+                <span class="badge bg-{{ log.color }} rounded-3 fw-semibold">{{ log.priority }}</span>
+              </div>
+            </td>
+            <td class="border-bottom-0">
+              <h6 class="fw-semibold mb-0 fs-4">{{ log.blocks }}</h6>
+            </td>
+          </tr>                        
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
